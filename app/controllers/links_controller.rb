@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class LinksController < ApplicationController
-  before_action :authenticate_request!, if: :json_request?
+  before_action :authenticate_request!
+  skip_before_action :authenticate_request!, if: :html_request?
+
+  def index
+    @links = Link.all.order(created_at: :desc)
+  end
+
   def new
     @link = Link.new
   end

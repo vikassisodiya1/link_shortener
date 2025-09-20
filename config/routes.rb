@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'links#new'
+  root 'links#index'
 
   resources :links, only: %i[new create show]
   get '/:short_code', to: 'links#redirect', as: :redirect

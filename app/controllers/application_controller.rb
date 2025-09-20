@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     render json: { error: 'Unauthorized' }, status: :unauthorized unless @current_user
   end
 
-  def json_request?
-    request.format.json?
+  def html_request?
+    request.format.html?
   end
 end
