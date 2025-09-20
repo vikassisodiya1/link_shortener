@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   root 'links#new'
   resources :links, only: %i[new create show]
+  get '/:short_code', to: 'links#redirect', as: :redirect
 end

@@ -36,6 +36,12 @@ class LinksController < ApplicationController
     @short_url = short_url(@link.short_code)
   end
 
+  def redirect
+    @link = Link.find_by!(short_code: params[:short_code])
+    @link.increment!(:clicks)
+    redirect_to @link.original_url, allow_other_host: true
+  end
+
   private
 
   def short_url(short_code)
