@@ -43,7 +43,9 @@ gem 'pg', '>= 1.1', '< 3.0'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'bcrypt', '~> 3.1.18' # for has_secure_password
 gem 'bootsnap', require: false
+gem 'jwt'
 gem 'rubocop-rails', '~> 2.33', '>= 2.33.3'
 # gem "image_processing", "~> 1.2"
 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class LinksController < ApplicationController
+  before_action :authenticate_request!, if: :json_request?
   def new
     @link = Link.new
   end
