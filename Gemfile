@@ -48,6 +48,7 @@ gem 'bootsnap', require: false
 gem 'jwt'
 gem 'rubocop-rails', '~> 2.33', '>= 2.33.3'
 # gem "image_processing", "~> 1.2"
+gem 'rswag'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
