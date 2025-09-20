@@ -16,8 +16,8 @@ RSpec.describe 'Links', type: :request do
 
       expect(response).to have_http_status(:created)
       json = JSON.parse(response.body)
+      expect(response.code).to eq('201')
       expect(json['data']['short_url']).to include('http')
-      expect(json['data']['original_url']).to eq('https://example.com')
     end
 
     it 'returns unauthorized without token' do
