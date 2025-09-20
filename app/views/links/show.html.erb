@@ -1,0 +1,6 @@
+<h1>Your short link</h1>
+<p>Original: <%= @link.original_url %></p>
+<p>Short: <%= @short_url %></p>
+<p>Clicks: <%= @link.clicks %></p>
+<p><%= link_to 'Short URL', @short_url, target: '_blank' %></p>
+<p><%= link_to 'Shorten another', root_path %></p>
