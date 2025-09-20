@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :links, only: %i[new create show]
   get '/:short_code', to: 'links#redirect', as: :redirect
-  scope :api do
+  scope :api, defaults: { format: :json } do
     scope :v1 do
       resources :links, only: [:create]
       post 'register', to: 'auth#register'

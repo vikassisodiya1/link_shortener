@@ -8,7 +8,7 @@ RSpec.describe 'API V1 Links', type: :request do
       tags 'Links'
       consumes 'application/json'
       produces 'application/json'
-      parameter name: :Authorization, in: :header, type: :string, required: true
+      security [{ Bearer: [] }]
       parameter name: :link, in: :body, schema: {
         type: :object,
         properties: {

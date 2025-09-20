@@ -21,11 +21,7 @@ class LinksController < ApplicationController
         format.json do
           render json: {
             data: {
-              id: @link.id,
-              original_url: @link.original_url,
-              short_url: short_url(@link.short_code),
-              short_code: @link.short_code,
-              clicks: @link.clicks
+              short_url: short_url(@link.short_code)
             }
           }, status: :created
         end
